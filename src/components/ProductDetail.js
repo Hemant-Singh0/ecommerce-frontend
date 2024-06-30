@@ -9,6 +9,7 @@ const ProductDetail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const product = useSelector(state => state.product.productDetails);
+    const { userInfo } = useSelector(state => state.user);
 
     useEffect(() => {
         dispatch(getProductDetails(id));
@@ -31,7 +32,11 @@ const ProductDetail = () => {
                 <p>{product.description}</p>
                 <p>${product.price}</p>
                 <p>Category: {product.category}</p>
-                <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
+                {userInfo ? (
+                    <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
+                ) : (
+                   ""
+                )}
             </div>
         </>
     );
