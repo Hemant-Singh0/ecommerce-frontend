@@ -1,3 +1,3 @@
-const BASE_URL = 'https://ecommerce-backend-9k2i.vercel.app/';
+const BASE_URL = 'https://ecommerce-backend-zeta-ten.vercel.app/';
 
 export default BASE_URL;
